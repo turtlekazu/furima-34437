@@ -1,4 +1,4 @@
-<mxfile host="65bd71144e" modified="2021-02-20T01:49:39.717Z" agent="5.0 (Macintosh; Intel Mac OS X 11_1_0) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.53.1 Chrome/87.0.4280.141 Electron/11.2.1 Safari/537.36" version="14.2.4" etag="J2segS0PdVxlPMS9Kwau" type="embed">
+<mxfile host="65bd71144e" modified="2021-02-20T02:08:36.388Z" agent="5.0 (Macintosh; Intel Mac OS X 11_1_0) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.53.1 Chrome/87.0.4280.141 Electron/11.2.1 Safari/537.36" version="14.2.4" etag="Az83v1rAt6BsSS0lk4lo" type="embed">
     <diagram id="xmi_4fAdCXyvG0sI4XVt" name="ページ1">
         <mxGraphModel dx="423" dy="543" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
@@ -7,7 +7,7 @@
                 <mxCell id="21" value="Users" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;fillColor=#0050ef;strokeColor=#001DBC;fontColor=#ffffff;swimlaneFillColor=#F2F2F2;" vertex="1" parent="1">
                     <mxGeometry x="140" y="170" width="160" height="160" as="geometry"/>
                 </mxCell>
-                <mxCell id="22" value="- nickname&#10;- email&#10;- password&#10;- last_name&#10;- first_name&#10;- last_name_kana&#10;- first_name_kana&#10;- birth_day" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;fontColor=#3B3B3B;" vertex="1" parent="21">
+                <mxCell id="22" value="- nickname&#10;- email&#10;- password&#10;- last_name&#10;- first_name&#10;- last_name_kana&#10;- first_name_kana&#10;- birth_date" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;fontColor=#3B3B3B;" vertex="1" parent="21">
                     <mxGeometry y="30" width="160" height="130" as="geometry"/>
                 </mxCell>
                 <mxCell id="24" value="Items" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;fillColor=#d80073;strokeColor=#A50040;fontColor=#ffffff;swimlaneFillColor=#F2F2F2;" vertex="1" parent="1">
