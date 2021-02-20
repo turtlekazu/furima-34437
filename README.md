@@ -57,7 +57,7 @@
 | prefecture_id | integer    | null: false       |
 | city          | string     | null: false       |
 | address_line1 | string     | null: false       |
-| address_line2 | string     | null: false       |
+| address_line2 | string     |                   |
 | phone_number  | string     | null: false       |
 | order         | references | foreign_key: true |
 
