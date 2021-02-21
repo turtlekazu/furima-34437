@@ -41,19 +41,25 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("Password can't be blank")
       end
-      it 'パスワードが英語しか入っていなくて登録失敗' do
+      it 'パスワードが英語しか入っていないため登録失敗' do
         @user.password = 'hogefuga'
         @user.password_confirmation = 'hogefuga'
         @user.valid?
         expect(@user.errors.full_messages).to include('Password Include both letters and numbers')
       end
-      it 'パスワードが数字しか入っていなくて登録失敗' do
+      it 'パスワードが数字しか入っていないため登録失敗' do
         @user.password = '123456'
         @user.password_confirmation = '123456'
         @user.valid?
         expect(@user.errors.full_messages).to include('Password Include both letters and numbers')
       end
-      it 'パスワードと確認用パスワードが一致しなくで登録失敗' do
+      it 'パスワードに全角文字が入っているため登録失敗' do
+        @user.password = 'あいうhoge123'
+        @user.password_confirmation = 'あいうhoge123'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Password Include both letters and numbers')
+      end
+      it 'パスワードと確認用パスワードが一致せず登録失敗' do
         @user.password = 'hogefuga123'
         @user.password_confirmation = '123hogefuga'
         @user.valid?
