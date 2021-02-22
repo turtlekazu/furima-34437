@@ -2,7 +2,10 @@ class Item < ApplicationRecord
   with_options presence: true do
     validates :name
     validates :info
-    validates :price
+
+    with_options inclusion: { in: 300..9999999 } do
+      validates :price
+    end
 
     with_options numericality: { other_than: 1 } do
       validates :category_id
