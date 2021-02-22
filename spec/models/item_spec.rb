@@ -17,7 +17,7 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Name can't be blank")
       end
-      it 'infoが空のため登録' do
+      it 'infoが空のため登録失敗' do
         @item.info = ''
         @item.valid?
         expect(@item.errors.full_messages).to include("Info can't be blank")
