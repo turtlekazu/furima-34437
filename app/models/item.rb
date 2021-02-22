@@ -12,6 +12,7 @@ class Item < ApplicationRecord
       validates :sales_status_id
       validates :shipping_fee_id
       validates :prefecture_id
+      validates :scheduled_delivery_id
     end
   end
 
