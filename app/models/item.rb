@@ -4,7 +4,8 @@ class Item < ApplicationRecord
     validates :info
     validates :image
 
-    validates :price, numericality: { message: 'Half-width number' }, inclusion: { in: 300..9999999, message: 'Out of setting range' }
+    validates :price, numericality: { message: 'Half-width number' },
+                      inclusion: { in: 300..9_999_999, message: 'Out of setting range' }
 
     with_options numericality: { other_than: 1, message: 'Select' } do
       validates :category_id
@@ -22,6 +23,6 @@ class Item < ApplicationRecord
   belongs_to :shipping_fee
   belongs_to :prefecture
   belongs_to :scheduled_delivery
-  
+
   has_one_attached :image
 end
