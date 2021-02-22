@@ -2,6 +2,7 @@ class Item < ApplicationRecord
   with_options presence: true do
     validates :name
     validates :info
+    validates :image
 
     with_options inclusion: { in: 300..9999999 } do
       validates :price
