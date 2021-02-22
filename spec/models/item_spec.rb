@@ -27,7 +27,7 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include('Category Select')
       end
-      it 'sales_status_idが未選択のため商品登録に失敗する' do
+      it 'sales_status_idが未選択のため登録失敗' do
         @item.sales_status_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include('Sales status Select')
