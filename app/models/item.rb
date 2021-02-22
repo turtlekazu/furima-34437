@@ -1,8 +1,8 @@
 class Item < ApplicationRecord
   with_options presence: true do
+    validates :image
     validates :name
     validates :info
-    validates :image
 
     validates :price, numericality: { message: 'Half-width number' },
                       inclusion: { in: 300..9_999_999, message: 'Out of setting range' }
