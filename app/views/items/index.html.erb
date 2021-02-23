@@ -125,6 +125,10 @@
     <h2 class='title'>ピックアップカテゴリー</h2>
     <%= link_to '新規投稿商品', "#", class: "subtitle" %>
     <ul class='item-lists'>
+
+<%
+=begin
+%>
       <% if @items != nil %>
         <% @items.each do |item| %>
           <li class='list'>
@@ -173,6 +177,10 @@
           <% end %>
         </li>
       <% end %>
+<%
+=end
+%>
+
     </ul>
   </div>
   <%# /商品一覧 %>
