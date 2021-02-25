@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
-  before_action :find_item, only: [:index, :create]
-  before_action :send_to_root, only: [:index, :create]
+  before_action :authenticate_user!
+  before_action :find_item
+  before_action :send_to_root
 
   def index
     @order_shipping = OrderShipping.new
@@ -37,8 +38,6 @@ class OrdersController < ApplicationController
   end
 
   def send_to_root
-    if user_signed_in? == false || current_user.id == @item.user_id || @item.order != nil
-      redirect_to root_path
-    end
+    redirect_to root_path if @item.user_id == current_user.id || @item.order != nil
   end
 end
