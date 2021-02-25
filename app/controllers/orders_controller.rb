@@ -1,22 +1,21 @@
 class OrdersController < ApplicationController
   def index
+    @order_shipping = OrderShipping.new
   end
 
   def create
-    @order = Order.create(user_id: current_user.id, item_id: params[:item_id])
-    @shipping = Shipping.new(shipping_params.merge(order_id: @order.id))
-    binding.pry
-    if @shipping.save
+    @order_shipping = OrderShipping.new(order_params)
+    if @order_shipping.valid?
+      @order_shipping.save
       redirect_to root_path
     else
-      @order.destroy
       render action: :index
     end
   end
 
   private
 
-  def shipping_params
-    params.require(:shipping).permit(:postal_code, :prefecture_id, :city, :address_line1, :address_line2, :phone_number)
+  def order_params
+    params.require(:order_shipping).permit(:postal_code, :prefecture_id, :city, :address_line1, :address_line2, :phone_number).merge(user_id: current_user.id, item_id: params[:item_id])
   end
 end
