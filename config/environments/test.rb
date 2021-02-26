@@ -4,6 +4,7 @@
 # and recreated between test runs. Don't rely on the data there!
 
 Rails.application.configure do
+  config.active_job.queue_adapter = :test  # 単体テストコードのタイムアウトエラーへの対応：参考URL(https://qiita.com/shun915a/items/e18f538be6221f929876 または https://stackoverflow.com/questions/60919107/mysql2error-mysql-client-is-not-connected-rails-6-0-2-2-with-rspec-ruby)
   # Settings specified here will take precedence over those in config/application.rb.
   
   config.cache_classes = false
