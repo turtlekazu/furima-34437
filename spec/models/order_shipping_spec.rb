@@ -18,27 +18,27 @@ RSpec.describe OrderShipping, type: :model do
       it 'postal_codeが空のために購入失敗' do
         @order_shipping.postal_code = ''
         @order_shipping.valid?
-        expect(@order_shipping.errors.full_messages).to include("Postal code can't be blank", "Postal code Input correctly")
+        expect(@order_shipping.errors.full_messages).to include("Postal code can't be blank", 'Postal code Input correctly')
       end
       it 'postal_codeが全角文字のために購入失敗' do
         @order_shipping.postal_code = 'あいうえお'
         @order_shipping.valid?
-        expect(@order_shipping.errors.full_messages).to include("Postal code Input correctly")
+        expect(@order_shipping.errors.full_messages).to include('Postal code Input correctly')
       end
       it 'postal_codeが半角英語のために購入失敗' do
         @order_shipping.postal_code = 'hoge'
         @order_shipping.valid?
-        expect(@order_shipping.errors.full_messages).to include("Postal code Input correctly")
+        expect(@order_shipping.errors.full_messages).to include('Postal code Input correctly')
       end
       it 'postal_codeにハイフンがないために購入失敗' do
         @order_shipping.postal_code = '0123456'
         @order_shipping.valid?
-        expect(@order_shipping.errors.full_messages).to include("Postal code Input correctly")
+        expect(@order_shipping.errors.full_messages).to include('Postal code Input correctly')
       end
       it 'prefecture_idが1のために購入失敗' do
         @order_shipping.prefecture_id = 1
         @order_shipping.valid?
-        expect(@order_shipping.errors.full_messages).to include("Prefecture Select")
+        expect(@order_shipping.errors.full_messages).to include('Prefecture Select')
       end
       it 'cityが空のために購入失敗' do
         @order_shipping.city = ''
@@ -53,17 +53,17 @@ RSpec.describe OrderShipping, type: :model do
       it 'phone_numberが空のために購入失敗' do
         @order_shipping.phone_number = ''
         @order_shipping.valid?
-        expect(@order_shipping.errors.full_messages).to include("Phone number can't be blank", "Phone number Input only number")
+        expect(@order_shipping.errors.full_messages).to include("Phone number can't be blank", 'Phone number Input only number')
       end
       it 'phone_numberが全角文字のために購入失敗' do
         @order_shipping.phone_number = 'あいうえお'
         @order_shipping.valid?
-        expect(@order_shipping.errors.full_messages).to include("Phone number Input only number")
+        expect(@order_shipping.errors.full_messages).to include('Phone number Input only number')
       end
       it 'phone_numberが半角英語のために購入失敗' do
         @order_shipping.phone_number = 'hoge'
         @order_shipping.valid?
-        expect(@order_shipping.errors.full_messages).to include("Phone number Input only number")
+        expect(@order_shipping.errors.full_messages).to include('Phone number Input only number')
       end
       it 'tokenが空のために購入失敗' do
         @order_shipping.token = nil

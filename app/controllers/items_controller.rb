@@ -51,6 +51,6 @@ class ItemsController < ApplicationController
   end
 
   def send_to_root
-    redirect_to root_path if @item.user_id != current_user.id || @item.order != nil
+    redirect_to root_path if @item.user_id != current_user.id || !@item.order.nil?
   end
 end
