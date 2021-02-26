@@ -12,6 +12,10 @@ RSpec.describe OrderShipping, type: :model do
       it '情報が全て揃っていて購入成功' do
         expect(@order_shipping).to be_valid
       end
+      it 'address_line2が空でも購入成功' do
+        @order_shipping.address_line2 = ''
+        expect(@order_shipping).to be_valid
+      end
     end
 
     context '失敗する場合' do
@@ -65,10 +69,25 @@ RSpec.describe OrderShipping, type: :model do
         @order_shipping.valid?
         expect(@order_shipping.errors.full_messages).to include('Phone number Input only number')
       end
+      it 'phone_numberが12文字以上のために購入失敗' do
+        @order_shipping.phone_number = '012345678910'
+        @order_shipping.valid?
+        expect(@order_shipping.errors.full_messages).to include('Phone number Input only number')
+      end
       it 'tokenが空のために購入失敗' do
         @order_shipping.token = nil
         @order_shipping.valid?
         expect(@order_shipping.errors.full_messages).to include("Token can't be blank")
+      end
+      it 'user_idが空のために購入失敗' do
+        @order_shipping.user_id = nil
+        @order_shipping.valid?
+        expect(@order_shipping.errors.full_messages).to include("User can't be blank")
+      end
+      it 'item_idが空のために購入失敗' do
+        @order_shipping.item_id = nil
+        @order_shipping.valid?
+        expect(@order_shipping.errors.full_messages).to include("Item can't be blank")
       end
     end
   end
